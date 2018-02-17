@@ -3,11 +3,19 @@ import {connect} from 'react-redux'
 import {fetchPosts} from '../actions'
 import {updateSub} from '../actions'
 
-const LoadSubreddit = ({dispatch}) => (
-  <input type ='text' onChange = {(e) => dispatch(updateSub(e.target.value))} >
-  <button onClick={() => dispatch(fetchPosts(this.props.subreddit))}>
-    Fetch regqeccoc Posts
-  </button>
+const LoadSubreddit = ({dispatch, sub}) => (
+  <div>
+     <input type ='text' onChange = {(e) => dispatch(updateSub(e.target.value))} />
+   <button onClick={() => dispatch(fetchPosts(sub))}>
+    Fetch Posts
+    </button>
+  </div>
 )
 
-export default connect()(LoadSubreddit)
+const mapStateToProps = (state) => {
+  return {
+    sub: state.sub
+  }
+}
+
+export default connect(mapStateToProps)(LoadSubreddit)
