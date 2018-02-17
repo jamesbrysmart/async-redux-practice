@@ -24,6 +24,10 @@ export const showError = (errorMessage) => {
   }
 }
 
+// export const 
+
+
+
 export function fetchPosts (subreddit) {
   return (dispatch) => {
     dispatch(requestPosts())
@@ -37,3 +41,5 @@ export function fetchPosts (subreddit) {
       })
   }
 }
+
+// export function updateSub
